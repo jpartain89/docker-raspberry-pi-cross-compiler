@@ -1,0 +1,22 @@
+## Ansible managed: Modified on 10/08/2018 by jpartain89 on JustinsMBA
+
+## archive.raspbian.org ##
+deb http://archive.raspbian.org/raspbian stretch main contrib non-free firmware rpi
+deb-src http://archive.raspbian.org/raspbian stretch main contrib non-free firmware rpi
+deb http://archive.raspbian.org/raspbian stretch-staging main contrib non-free firmware rpi
+deb-src http://archive.raspbian.org/raspbian stretch-staging main contrib non-free firmware rpi
+
+## archive.raspberrypi.org ##
+deb http://archive.raspberrypi.org/debian stretch main
+deb-src http://archive.raspberrypi.org/debian stretch main
+
+## ftp.debian.org for backports ##
+deb http://ftp.debian.org/debian stretch-backports main contrib non-free
+deb-src http://ftp.debian.org/debian stretch-backports main contrib non-free
+
+deb http://ftp.debian.org/debian/ stretch main contrib non-free
+deb http://security.debian.org/ stretch/updates main contrib non-free
+deb http://ftp.debian.org/debian/ stretch-updates main contrib non-free
+deb-src http://ftp.debian.org/debian/ stretch main contrib non-free
+deb-src http://security.debian.org/ stretch/updates main contrib non-free
+deb-src http://ftp.debian.org/debian/ stretch-updates main contrib non-free
