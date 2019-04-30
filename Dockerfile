@@ -49,20 +49,20 @@ RUN chroot $SYSROOT $QEMU_PATH /bin/sh -c '\
             >> /etc/apt/sources.list \
         && echo "deb http://archive.raspbian.org/raspbian stretch-staging main contrib non-free firmware rpi" \
             >> /etc/apt/sources.list \
-        && apt-get update \
-        && DEBIAN_FRONTEND=noninteractive apt-get install -y apt-utils \
-        && DEBIAN_FRONTEND=noninteractive dpkg-reconfigure apt-utils \
-        && DEBIAN_FRONTEND=noninteractive apt-get upgrade -y \
-        && DEBIAN_FRONTEND=noninteractive apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 \
+        && sudo apt-get update \
+        && DEBIAN_FRONTEND=noninteractive sudo apt-get install -y apt-utils \
+        && DEBIAN_FRONTEND=noninteractive sudo dpkg-reconfigure apt-utils \
+        && DEBIAN_FRONTEND=noninteractive sudo apt-get upgrade -y \
+        && DEBIAN_FRONTEND=noninteractive sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 \
             0xF1656F24C74CD1D8 \
         && echo "deb-src [arch=amd64] http://nyc2.mirrors.digitalocean.com/mariadb/repo/10.3/debian stretch main" \
             >> /etc/apt/sources.list.d/mariadb.list \
-        && apt-get update \
-        && DEBIAN_FRONTEND=noninteractive apt-get upgrade -y \
-        && DEBIAN_FRONTEND=noninteractive apt-get install -y \
+        && sudo apt-get update \
+        && DEBIAN_FRONTEND=noninteractive sudo apt-get upgrade -y \
+        && DEBIAN_FRONTEND=noninteractive sudo apt-get install -y \
                 libc6-dev \
                 symlinks \
-        && DEBIAN_FRONTEND=noninteractive apt-get build-dep \
+        && DEBIAN_FRONTEND=noninteractive sudo apt-get build-dep \
             mariadb-server-10.3 \
         && symlinks -cors /'
 
