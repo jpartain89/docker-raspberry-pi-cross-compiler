@@ -35,7 +35,7 @@ ENV ARCH=arm \
     SYSROOT=$RPXC_ROOT/sysroot
 
 WORKDIR $SYSROOT
-RUN curl -Ls https://github.com/sdhibit/docker-rpi-raspbian/raw/master/raspbian.2015.05.05.tar.xz \
+RUN curl -Ls https://github.com/schachr/docker-raspbian-stretch/raw/master/raspbian.image.tar.xz \
     | tar -xJf - \
  && curl -Ls https://github.com/resin-io-projects/armv7hf-debian-qemu/raw/master/bin/qemu-arm-static \
     > $SYSROOT/$QEMU_PATH \
