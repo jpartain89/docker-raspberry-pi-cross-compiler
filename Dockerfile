@@ -45,7 +45,7 @@ RUN curl -Ls https://github.com/schachr/docker-raspbian-stretch/raw/master/raspb
 COPY image/ /
 
 RUN chroot $SYSROOT $QEMU_PATH /bin/sh -c '\
-        apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 \
+        DEBIAN_FRONTEND=noninteractive apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 \
             0xF1656F24C74CD1D8 \
         && echo "deb-src [arch=amd64] http://nyc2.mirrors.digitalocean.com/mariadb/repo/10.3/debian stretch main" \
             >> /etc/apt/sources.list.d/mariadb.list \
