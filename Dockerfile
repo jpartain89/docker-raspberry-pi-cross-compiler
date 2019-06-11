@@ -45,8 +45,7 @@ RUN curl -Ls https://github.com/schachr/docker-raspbian-stretch/raw/master/raspb
 COPY image/ /
 
 RUN chroot $SYSROOT $QEMU_PATH /bin/sh -c '\
-        DEBIAN_FRONTEND=noninteractive apt-get install sudo -y \
-        && echo "deb http://archive.raspbian.org/raspbian stretch main contrib non-free firmware rpi" \
+        echo "deb http://archive.raspbian.org/raspbian stretch main contrib non-free firmware rpi" \
             >> /etc/apt/sources.list \
         && echo "deb http://archive.raspbian.org/raspbian stretch-staging main contrib non-free firmware rpi" \
             >> /etc/apt/sources.list \
